@@ -4,7 +4,6 @@ export default {
       "https://gitlab.com/UmmIt",
       "https://codeberg.org/UmmIt"
     ];
-
     const statusCode = 301;
 
     const randomIndex = Math.floor(Math.random() * urls.length);
@@ -16,6 +15,15 @@ export default {
     const destinationURL = `${randomURL}${pathname}${search}`;
     console.log(destinationURL);
 
-    return Response.redirect(destinationURL, statusCode);
+    // Create a new response with the redirect and cache control headers
+    const response = new Response(null, {
+      status: statusCode,
+      headers: {
+        "Location": destinationURL,
+        "Cache-Control": "no-store, max-age=0"
+      }
+    });
+    
+    return response;
   },
 };
