@@ -60,9 +60,6 @@ export default {
       `;
     }
 
-    // Log the request URL
-    console.log("Request URL:", request.url);
-
     // Create a new response with the redirect and cache control headers
     const response = new Response(redirectHTML, {
       status: statusCode,
@@ -75,8 +72,3 @@ export default {
     return response;
   },
 };
-
-// Register the fetch event listener outside the fetch handler
-self.addEventListener('fetch', event => {
-  console.log("Inside fetch event listener");
-});
