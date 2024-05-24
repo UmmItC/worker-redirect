@@ -10,6 +10,11 @@ export default {
         url: "https://codeberg.org/UmmIt",
         title: "<h1>Codeberg</h1>",
         devops: "Codeberg"
+      },
+      {
+        url: "https://github.com/UmmItC",
+        title: "<h1>Github</h1>",
+        devops: "Github"
       }
     ];
 
